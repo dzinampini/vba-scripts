@@ -1,0 +1,17 @@
+Option Compare Database
+
+Private Sub add_sponsor_Click()
+    Dim StrSQL As String
+    Dim full_name As String
+    Dim address As String
+
+
+    full_name = Me.txt_name
+    address = Me.txt_address
+
+    StrSQL = "INSERT INTO sponsors (full_name, address) VALUES ('" & full_name & "', '" & address & "');"
+
+    DoCmd.SetWarnings False
+    DoCmd.RunSQL StrSQL
+    DoCmd.SetWarnings True
+End Sub
